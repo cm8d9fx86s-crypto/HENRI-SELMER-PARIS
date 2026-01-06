@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Marine Perrin – VIE Business Developer · Henri SELMER Paris</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Elegant fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1a1a1a;      /* Deep black */
+      --accent: #b8860b;       /* Brass / gold */
+      --bg: #f4efe6;           /* Warm parchment */
+      --text: #1a1a1a;
+      --muted: #6b6258;
+      --card: #fdfaf5;
+      --border: #d8c7a6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Lora", serif;
+    }
+
+    h1, h2, h3, .logo, .hero-role, .section-title {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Page frame */
+    .page {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 32px 24px 64px;
+      background: var(--card);
+      border: 3px solid var(--accent);
+      border-radius: 18px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 26px;
+      color: var(--primary);
+    }
+
+    .tagline {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    nav a {
+      margin-left: 16px;
+      font-size: 15px;
+      color: var(--muted);
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-title {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      color: var(--primary);
+    }
+
+    .hero-role {
+      font-size: 20px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-size: 17px;
+    }
+
+    .btn-primary {
+      padding: 12px 24px;
+      background: var(--primary);
+      color: white;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .btn-secondary {
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      background: #f9f4ea;
+      cursor: pointer;
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      background: #f3e5cf;
+      color: #5b4630;
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .hero-card {
+      background: #f9f3e7;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .hero-metric-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .hero-metric-value {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+
+    .hero-metric-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 16px 18px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--primary);
+    }
+
+    .card-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .card-list {
+      font-size: 15px;
+      margin-left: 16px;
+      color: var(--text);
+    }
+
+    /* Contact */
+    .contact-section {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--primary);
+      color: white;
+      border-radius: 16px;
+    }
+
+    .contact-section p {
+      color: #f3eadd;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .contact-info {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .contact-info a {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      font-family: "Cormorant Garamond", serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <div>
+        <div class="logo">MARINE PERRIN</div>
+        <div class="tagline">VIE Business Developer · Henri SELMER Paris</div>
+      </div>
+      <nav>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">Driving the commercial development and artistic influence of Henri SELMER Paris across the United States.</h1>
+
+        <div class="hero-role">VIE Business Developer – New York, USA</div>
+
+        <p class="hero-text">
+          Pianist since childhood, I aspire to join Henri SELMER Paris as a VIE Business Developer to combine my commercial expertise with my lifelong passion for music and accelerate the Maison’s growth across the U.S.  
+          With experience in sales, procurement and field collaboration, I bring a musician’s sensitivity, a strong client‑oriented mindset and the energy required to develop the dealer network, support artists and educators, and activate the brand nationwide.
+        </p>
+
+        <a href="CV-MARINE.pdf" class="btn-primary" download>Download CV (PDF)</a>
+
+        <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Contact me
+        </button>
+
+        <div class="hero-highlights">
+          <span class="pill">Business Development</span>
+          <span class="pill">Dealer Network Expansion</span>
+          <span class="pill">Artists & Educators Relations</span>
+          <span class="pill">Field Activation</span>
+          <span class="pill">Market Insights & Strategy</span>
+          <span class="pill">International Mobility</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-metric-label">Mission Fit</div>
+        <div class="hero-metric-value">Business Developer</div>
+        <div class="hero-metric-sub">
+          Supporting Conn Selmer, expanding the U.S. dealer network, coordinating field activations, strengthening artistic partnerships and ensuring aligned execution between Paris and the U.S.
+        </div>
+        <div class="hero-badges">
+          <span>• Business Development</span>
+          <span>• Dealer Network</span>
+          <span>• Artist Relations</span>
+          <span>• Co‑Marketing</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="grid grid-3">
+
+        <div class="card">
+          <div class="card-title">Category Manager NESCAFÉ</div>
+          <div class="card-subtitle">Nestlé France (2025–2026)</div>
+          <ul class="card-list">
+            <li>Developed commercial strategies and ensured flawless execution across major retailers.</li>
+            <li>Managed a €4M budget with strong ownership and performance tracking.</li>
+            <li>Collaborated with sales, marketing and supply chain teams to align execution.</li>
+            <li>Strengthened client relationships and supported field teams.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Strategic Buyer</div>
+          <div class="card-subtitle">Nestlé France (2024–2025)</div>
+          <ul class="card-list">
+            <li>Led cross‑functional projects with marketing, sales and logistics.</li>
+            <li>Negotiated contracts and managed supplier relationships.</li>
+            <li>Ensured compliance, risk assessment and operational alignment.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Assistant Category Manager</div>
+          <div class="card-subtitle">Nestlé France (2024)</div>
+          <ul class="card-list">
+            <li>Produced performance reports and insights for strategic decisions.</li>
+            <li>Redesigned a Drive interface with a strong focus on user experience.</li>
+            <li>Collaborated with account managers and marketing teams.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Marketing & Sales Administration Assistant</div>
+          <div class="card-subtitle">Filorga – Colgate Group (2023)</div>
+          <ul class="card-list">
+            <li>Supported premium skincare distribution across 120 pharmacies.</li>
+            <li>Handled client requests, stock issues and delivery follow‑up.</li>
+            <li>Discovered the codes of premium retail and client service.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">Skills & Musical Sensitivity</h2>
+
+      <div class="grid grid-3">
+
+        <div class="card">
+          <div class="card-title">Business Development</div>
+          <ul class="card-list">
+            <li>Dealer network development and support.</li>
+            <li>Prospection and commercial expansion.</li>
+            <li>Market insights and competitive analysis.</li>
+            <li>Strategic recommendations for U.S. growth.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Field Activation & Partnerships</div>
+          <ul class="card-list">
+            <li>Artist, educator and institution relations.</li>
+            <li>Event support: conventions, festivals, trade shows.</li>
+            <li>Training of sales teams and key account managers.</li>
+            <li>Co‑marketing coordination with Conn Selmer.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Musical Background</div>
+          <ul class="card-list">
+            <li>Pianist since childhood.</li>
+            <li>Strong sensitivity to musicians’ needs.</li>
+            <li>Understanding of artistic expectations and instrument culture.</li>
+            <li>Passion for music, performance and craftsmanship.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-title">Master 2 – Innovative Project Management</div>
+          <div class="card-subtitle">Rennes School of Business</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Master 1 – Marketing & Commerce</div>
+          <div class="card-subtitle">Rennes School of Business</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Erasmus Exchange</div>
+          <div class="card-subtitle">Technological University of Dublin</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Bachelor – GlobalTech & Cybersecurity</div>
+          <div class="card-subtitle">Rennes School of Business</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Preparatory Class – Science Track</div>
+          <div class="card-subtitle">Lycée Ampère</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Scientific Baccalaureate – Highest Honors</div>
+          <div class="card-subtitle">Lycée Daudet</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <h2 class="section-title" style="color:white;">Contact</h2>
+      <p>
+        Ready to represent Henri SELMER Paris across the United States and support the Maison’s artistic and commercial influence.
+      </p>
+      <div class="contact-info">
+        Email : <a href="mailto:perrin.marinelaure@gmail.com">perrin.marinelaure@gmail.com</a><br />
+        Phone : +33 6 82 33 52 08<br />
+        LinkedIn : <a href="https://www.linkedin.com/in/marine-perrin-920197213" target="_blank">/in/marine-perrin</a>
+      </div>
+      <a href="CV-MARINE.pdf" class="btn-primary" download>Download CV (PDF)</a>
+    </section>
+
+    <footer>
+      © Marine Perrin – VIE Business Developer · Henri SELMER Paris
+    </footer>
+
+  </div>
+</body>
+</html>
